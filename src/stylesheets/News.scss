@@ -1,0 +1,14 @@
+.newsSectionContainer {
+  padding-left: 200px;
+  padding-right: 200px;
+  color: rgb(8, 184, 184);
+}
+.newsContainer {
+  display: flex;
+  justify-content: flex-start;
+  img {
+    height: 500px;
+    width: 700px;
+    object-fit: cover;
+  }
+}

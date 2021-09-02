@@ -1,0 +1,22 @@
+.newsSectionContainer {
+  padding-left: 200px;
+  padding-right: 200px;
+  color: #08b8b8;
+}
+
+.newsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.newsContainer img {
+  height: 500px;
+  width: 700px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=News.css.map */

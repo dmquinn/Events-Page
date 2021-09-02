@@ -1,0 +1,22 @@
+nav {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  padding: 20px 0 0 100px;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    width: 20%;
+  }
+  .left {
+    justify-content: flex-end;
+    color: red;
+    li {
+      padding: 0 20px;
+    }
+  }
+}
