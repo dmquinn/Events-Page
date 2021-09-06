@@ -24,30 +24,26 @@ import {
 } from "../constants/eventConstants";
 import { logout } from "./userActions";
 
-export const listEvents =
-  (keyword = "", pageNumber = "") =>
-  async (dispatch) => {
-    try {
-      dispatch({ type: EVENT_LIST_REQUEST });
+export const listEvents = () => async (dispatch) => {
+  try {
+    dispatch({ type: EVENT_LIST_REQUEST });
 
-      const { data } = await axios.get(
-        `/api/events?keyword=${keyword}&pageNumber=${pageNumber}`
-      );
-
-      dispatch({
-        type: EVENT_LIST_SUCCESS,
-        payload: data,
-      });
-    } catch (error) {
-      dispatch({
-        type: EVENT_LIST_FAIL,
-        payload:
-          error.response && error.response.data.message
-            ? error.response.data.message
-            : error.message,
-      });
-    }
-  };
+    const { data } = await axios.get(`/api/events`);
+    console.log(data);
+    dispatch({
+      type: EVENT_LIST_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: EVENT_LIST_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
 
 export const listEventDetails = (id) => async (dispatch) => {
   try {

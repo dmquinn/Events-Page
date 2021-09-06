@@ -1,6 +1,7 @@
 const path = require("path");
 const express = require("express");
 const userRoutes = require("./routes/userRoutes");
+const eventRoutes = require("./routes/eventRoutes");
 
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
@@ -17,6 +18,7 @@ if (process.env.NODE_ENV === "development") {
 app.use(express.json());
 
 app.use("/api/users", userRoutes);
+app.use("/api/events", eventRoutes);
 
 const folder = path.resolve();
 
