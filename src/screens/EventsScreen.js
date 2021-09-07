@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { listEvents } from "../actions/eventActions";
 import { useDispatch, useSelector } from "react-redux";
+import Card from "../components/EventCard";
 
 const EventsScreen = ({ match }) => {
   const keyword = match.params.keyword;
@@ -28,26 +29,19 @@ const EventsScreen = ({ match }) => {
     console.log("events", events);
   }, [dispatch, keyword, pageNumber]);
   return (
-    <div
-      style={{
-        height: "400px",
-        width: "100vw",
-        backgroundColor: "slategrey",
-        marginTop: "-100px",
-      }}
-    >
+    <>
+      <div
+        style={{
+          height: "400px",
+          width: "100vw",
+          backgroundColor: "slategrey",
+          marginTop: "-100px",
+        }}
+      ></div>
       {events.map((event, i) => (
-        <div>
-          <h1
-            key={i}
-            event={event}
-            style={{ color: "black", marginTop: "500px" }}
-          >
-            {event.name}
-          </h1>
-        </div>
+        <Card event={event}></Card>
       ))}{" "}
-    </div>
+    </>
   );
 };
 
